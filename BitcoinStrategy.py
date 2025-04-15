@@ -37,5 +37,5 @@ def compute_matrix():
     transition_matrix = transition_counts.div(transition_counts.sum(axis=1), axis=0)
 
     return transition_matrix
-print("Corrected Transition Matrix (2025):")
-print(compute_matrix())
+#print("Corrected Transition Matrix (2025):")
+#print(compute_matrix())
