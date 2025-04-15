@@ -45,17 +45,19 @@ def compute_expected_returns(csv_path):
                     results.append({
                         "From": from_state,
                         "To": to_state,
-                        #"Path": " → ".join(path),
-                        "Transition Probability": round(prob,6),
-                        "Return Ratio": round(return_ratio,6),
-                        "Expected Return": round(expected_return,6)
+                        "Transition Probability": round(prob, 6),
+                        "Return Ratio": round(return_ratio, 6),
+                        "Expected Return": round(expected_return, 6)
                     })
                 except:
                     continue
 
-    return pd.DataFrame(results)
+    df = pd.DataFrame(results)
+    df["From"] = pd.Categorical(df["From"], categories=states, ordered=True)
+    return df.sort_values(by=["From", "To"])
 
 if __name__ == "__main__":
     csv_path = "Bitcoin Pulse  Hourly Dataset from Markets Trends and Fear.csv"
     df = compute_expected_returns(csv_path)
-    print(df.sort_values(by="Expected Return", ascending=False).to_string(index=False))
+    pd.set_option('display.float_format', lambda x: '%.6f' % x)
+    print(df.to_string(index=False))
