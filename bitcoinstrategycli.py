@@ -43,7 +43,7 @@ def main():
     try:
         buy_price = avg_prices[buy_state]
         sell_price = avg_prices[sell_state]
-        return_ratio = (sell_price - buy_price) / buy_price
+        return_ratio = ((sell_price - buy_price) / buy_price) *100
 
         print(f"\nReturn Ratio for buying in '{buy_state}' and selling in '{sell_state}': {return_ratio:.6f}")
 
