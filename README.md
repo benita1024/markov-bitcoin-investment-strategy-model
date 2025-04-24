@@ -1,12 +1,12 @@
-Bitcoin Sentiment Strategy CLI: A Markov Chain Simulator of Bitcoin Market Sentiment
+## Bitcoin Sentiment Strategy CLI: A Markov Chain Simulator of Bitcoin Market Sentiment
 
 This project models Bitcoin price behavior across Fear & Greed sentiment regimes using a Markov chain framework. By labeling each hourly data point with a sentiment state, computing average prices per state, and building a transition matrix, you can interactively test “buy in X, sell in Y” strategies and immediately see historical return ratios.
 
-Objective
+## Objective
 
 To explore how sentiment‐based trading decisions drive returns by simulating state transitions in a Markov chain over historical Bitcoin price data.
 
-How It Works
+## How It Works
 
 1. **Load data**  
    Read the hourly CSV of Bitcoin prices paired with the Fear & Greed Index.  
@@ -21,7 +21,7 @@ How It Works
 6. **Calculate return**  
    Fetch the two state averages, compute the return ratio \((P_{\text{sell}} - P_{\text{buy}})/P_{\text{buy}}\), and display an emoji‐driven assessment of strategy strength.
 
-Features
+## Features
 
 - **Custom sentiment states**  
   Five preconfigured regimes matching the Fear & Greed Index—easy to adjust or extend.  
@@ -34,7 +34,7 @@ Features
 - **Emoji feedback**  
   Instantly know if your chosen strategy is historically strong, reasonable, marginal, or a loss.
 
-Getting Started
+## Getting Started
 
 Clone the repo and enter its directory:
 ```bash
